@@ -1,0 +1,65 @@
+<div class="card">
+  <div class="tools">
+    <div class="circle">
+      <span class="red box"></span>
+    </div>
+    <div class="circle">
+      <span class="yellow box"></span>
+    </div>
+    <div class="circle">
+      <span class="green box"></span>
+    </div>
+  </div>
+  <div class="card__content">
+    <div style="display: flex; align-items: center;">
+      <h3 style="margin-right: 10px;">Şifre Uzunluğu</h3>
+      <input type="text" (change)="modifLength($event.target.value)">
+    </div>
+    <div style="display: flex; align-items: center;">
+      <h3 style="margin-right: 10px;">Alfabeyi Kullan</h3>
+      <input (change)="modifyLetters()" type="checkbox">
+    </div>
+    <div style="display: flex; align-items: center;">
+      <h3 style="margin-right: 10px;">Sayıları Kullan</h3>
+      <input (change)="modifyNumbers()" type="checkbox">
+    </div>
+    <div style="display: flex; align-items: center;">
+      <h3 style="margin-right: 10px;">Sembolleri Kullan</h3>
+      <input (change)="modifySymbol()" type="checkbox">
+    </div>
+    <div>
+
+
+
+
+
+
+
+      
+
+      <button class="cssbuttons-io-button"[disabled]="!(length && (includeLetters || includeSymbols || includeNumbers ))"  (click)="buttonClick()">
+       OLUŞTUR
+        <div class="icon">
+          <svg
+            height="24"
+            width="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div class="box" *ngIf="password">
+      <label>Şifreniz</label>
+      <input [value]="password">
+    </div>
+    
+    
+  </div>
+</div>
